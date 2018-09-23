@@ -50,7 +50,7 @@ slowlog-max-len 128
 In this demo, we have need use 6 instance to setup an cluster, so we have 6 folder for instance just contains the configure file.
 
 Then we can start the instance:
-`docker run -t -P --restart=always --net=host --privileged=true -v /home/ice/redis/rediscluster/7000/redis.conf:/etc/redis.conf --name redis7000  3e40559cd5f7 redis-server /etc/redis.conf`
+```docker run -t -P --restart=always --net=host --privileged=true -v /home/ice/redis/rediscluster/7000/redis.conf:/etc/redis.conf --name redis7000  3e40559cd5f7 redis-server /etc/redis.conf```
 
 After change to root, we can use the following command 
 `netstat -tnlp | grep redis`
@@ -64,11 +64,10 @@ tcp        0      0 0.0.0.0:17000           0.0.0.0:*               LISTEN      
 
 
 After all instances be started, we can use the redis cli to manage the Cluster.
-
-`sudo apt-get install redis-tools`
+```sudo apt-get install redis-tools```
 
 Then connect to Redis:
-`redis-cli -p 7000`
+```redis-cli -p 7000```
 
 Please check the "OSS Redis Brief Introduction" for more details.
 
