@@ -11,17 +11,22 @@ The following demo shows how to setup Redis Cluster on a Linux machine with dock
 
 Please note: This demo only works for the Linux.
 
+##Setup Redis Cluster
+
 Setup Docker by following doc:
 https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce-1
+
+Create **Dockerfile**, check details in above.
 
 Build Redis instance images:
 
 ```docker build -f Dockerfile -t iceshi/redis:4.0.9 /home/ice/redis/rediscluster```
 
-Dockerfile is in the same folder.
-
 After build the image, note down the image ID.
-
+```Successfully built 3e40559cd5f7
+Successfully tagged iceshi/redis:4.0.9
+ice@ice-ubuntu:~/redis/rediscluster$ 
+```
 
 Create the redis.conf file:
 ```port 7000 ## change port number for each instance
@@ -49,6 +54,13 @@ Then we can start the instance:
 
 After change to root, we can use the following command 
 `netstat -tnlp | grep redis`
+
+```
+root@ice-ubuntu:/home/ice/redis/rediscluster# netstat -tnlp | grep redis
+tcp        0      0 0.0.0.0:7000            0.0.0.0:*               LISTEN      13426/redis-server
+tcp        0      0 0.0.0.0:17000           0.0.0.0:*               LISTEN      13426/redis-server
+```
+
 
 
 After all instances be started, we can use the redis cli to manage the Cluster.
