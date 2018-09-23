@@ -10,7 +10,7 @@ The offical website is here: https://redis.io/
 The following demo shows how to setup Redis Cluster on a Linux machine with docker and brief introduction about the Redis Cluter.
 
 Please note: This demo only works for the Linux.
-----------
+
 ## Setup Redis Cluster
 
 Setup Docker by following doc:
