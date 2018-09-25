@@ -147,9 +147,10 @@ sudo apt-get install ruby2.5
 
 ```
 
-
+Install Redis Ruby dependancy
+```
 gem install redis
-
+```
 
 Using the following command in utils folder in source to create the Cluster:
 ```
